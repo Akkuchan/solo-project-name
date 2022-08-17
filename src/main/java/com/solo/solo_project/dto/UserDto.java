@@ -50,6 +50,7 @@ public class UserDto {
 
     @Getter
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class multi_response{
       private List<User> user;
       private  PageInfo pageInfo;

@@ -1,0 +1,31 @@
+= 전국 사업자 커뮤니티
+:sectnums:
+:toc: left
+:toclevels:4
+:toc-title: Table of Contents
+:source-highlighter: prettify
+
+v1.0.0, 2022.08.17    // (3)
+
+Lim Chan Il <asd@naver.com>
+***
+= UserController
+=== 회원 등록
+.curl-requset
+include::{snippets}/post-user/curl-request.adoc[]
+
+.http-request
+include::{snippets}/post-user/http-request.adoc[]
+
+.requset-fields
+include::{snippets}/post-user/request-fields.adoc[]
+
+.http-response
+include::{snippets}/post-user/http-response.adoc[]
+
+.response-body
+include::{snippets}/post-user/response-body.adoc[]
+
+.response-field
+include::{snippets}/post-user/response-fields.adoc[]
+

@@ -2,6 +2,7 @@ package com.solo.solo_project.mapper;
 
 import com.solo.solo_project.Entity.User;
 import com.solo.solo_project.dto.UserDto;
+import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
@@ -28,7 +29,7 @@ public class Usermapper {
 
     }
 
-//    public UserDto.multi_response userToUsersResponses(List<User> users, Page page) {
-//        return null;
-//    }
+    public UserDto.multi_response userToUsersResponses(List<User> users, Page page) {
+        return new UserDto.multi_response(users, page);
+    }
 }

@@ -30,14 +30,7 @@ public class UserController {
         System.out.println(requestBody.getEmail());
         System.out.println("시작");
         User user = mapper.userPostDtoToUser(requestBody);
-        System.out.println("!!!!!!!!!!!!!!!!!!");
-        System.out.println(user.getUserID());
-        System.out.println(user.getEmail());
-        System.out.println(user.getSex());
-        System.out.println(user.getCompany_name());
-        System.out.println(user.getCompany_type());
-        System.out.println(user.getCompany_location());
-        System.out.println("매핑 통과");
+         System.out.println("매핑 통과");
         User createdUser = userService.createUser(user);
         System.out.println("서비스 통과");
         return new ResponseEntity<>(
@@ -48,7 +41,7 @@ public class UserController {
     }
 //
 //    /*user-id 기준으로 검색 */
-//    @GetMapping("/{user-id}")
+//    @GetMapping("/{}")
 //    public  ResponseEntity getUser(@PathVariable("user-id") long userID){
 //        User user = userService.findUserByUserID(userID);
 //
@@ -56,7 +49,7 @@ public class UserController {
 //                HttpStatus.OK);
 //
 //    }
-//
+
 //    /*전 회원 검색 */
 //    @GetMapping()
 //    public ResponseEntity getUsers(@Positive @RequestParam int page, @Positive @RequestParam int size){
@@ -68,27 +61,27 @@ public class UserController {
 //                mapper.userToUsersResponses(users, pageUsers),
 //                HttpStatus.OK);
 //    }
-//
-//    /*지역명을 기준으로 검색 */
-//    @GetMapping("/{location}")
-//    public  ResponseEntity getUser(@PathVariable("location") int location_id){
-//        User user = userService.findUserByLocation(location_id);
-//
-//        return new ResponseEntity<>(
-//                mapper.userToUsersResponses(users, pageUsers),
-//                HttpStatus.OK);
+
+    /*지역명을 기준으로 검색 */
+    @GetMapping("/{location}")
+    public  ResponseEntity getUser(@PathVariable("location") int location_id){
+        User user = userService.findUserByLocation(location_id);
+
+        return new ResponseEntity<>(
+                mapper.userToUserResponseDto(user),
+                HttpStatus.OK);
+    }
 //    }
-//    }
-//
-//    /*업종을 기준으로 검색 */
-//    @GetMapping("/{industry}")
-//    public  ResponseEntity getUsers(@PathVariable("industry") int industry_id){
-//        User user = userService.findUserByIndustry(industry_id);
-//
-//        return new ResponseEntity<>(
-//                mapper.userToUsersResponses(users, pageUsers),
-//                HttpStatus.OK);
-//    }
+
+    /*업종을 기준으로 검색 */
+    @GetMapping("/{industry}")
+    public  ResponseEntity getUsers(@PathVariable("industry") int industry_id){
+        User user = userService.findUserByIndustry(industry_id);
+
+        return new ResponseEntity<>(
+                mapper.userToUserResponseDto(user),
+                HttpStatus.OK);
+    }
 
 
 

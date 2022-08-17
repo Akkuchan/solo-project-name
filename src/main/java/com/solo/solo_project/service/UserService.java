@@ -42,14 +42,14 @@ public class UserService {
 //
 //        return null;
 //    }
-//
-//    public User findUserByLocation(int company_location) {
-//        return null;
-//    }
-//
-//    public User findUserByIndustry(long userID) {
-//        return null;
-//    }
+
+    public User findUserByLocation(int company_location) {
+        return null;
+    }
+
+    public User findUserByIndustry(long userID) {
+        return null;
+    }
 
 
 
@@ -60,4 +60,6 @@ public class UserService {
         if (member.isPresent())
             throw new RuntimeException();////추후 수정
     }
+
+
 }
